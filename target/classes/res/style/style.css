@@ -1,6 +1,3 @@
-
-
-
 a{
   color: brown;
 }
@@ -21,8 +18,8 @@ border: none;
 .product{
    border-right: 1px dotted red;
     padding: 0 15px;
-    
 }
+
 
 .products-main{
   width: 200px;

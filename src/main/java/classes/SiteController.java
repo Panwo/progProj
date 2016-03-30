@@ -15,7 +15,6 @@ public class SiteController {
 
     @RequestMapping("/")
     public String index(Model model) {
-
         model.addAttribute("categories", myService.listGroups());
         return "index";
     }
@@ -23,10 +22,11 @@ public class SiteController {
 
     @RequestMapping("/top/{id}")
     public String listCategory (@PathVariable(value = "id") long categoryId, Model model) {
-          categoryId = 7;
-            Category category =  myService.find(categoryId);
-
-        model.addAttribute("products", MyService.listProducts(category));
+           //  long categoryId = 7;
+        Category category =  myService.find(categoryId);
+        model.addAttribute("cat", category);
+        model.addAttribute("products", myService.listProducts(category));
+        model.addAttribute("categories", myService.listGroups());
         return "top";
     }
 

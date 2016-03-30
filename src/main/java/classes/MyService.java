@@ -9,11 +9,12 @@ import java.util.List;
 
 @Service
 public class MyService {
-    @Autowired
-    private static CategoryDAO categoryDAO;
 
     @Autowired
-    private  static ProductsDAO productsDAO;
+    private  CategoryDAO categoryDAO;
+
+    @Autowired
+    private   ProductsDAO productsDAO;
 
 
 
@@ -23,13 +24,13 @@ public class MyService {
     }
 
     @Transactional(readOnly=true)
-    public static List<Category> listGroups() {
+    public  List<Category> listGroups() {
         return categoryDAO.list();
     }
 
 
     @Transactional(readOnly = true)
-    public static List<Products> listProducts (Category category){
+    public  List<Products> listProducts (Category category){
        return productsDAO.list(category);
     }
 

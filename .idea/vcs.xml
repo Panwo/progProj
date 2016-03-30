@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Fproj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/proj" vcs="Git" />
+    <mapping directory="E:\java\курсы pro\FProj\Project" vcs="Git" />
   </component>
 </project>

@@ -18,11 +18,11 @@ public class ProductsDAOImpl implements  ProductsDAO  {
 
     @Override
     public List<Products> list (Category category) {
-        Query query = null;
-        if (category!= null) {
-            query = entityManager.createQuery("SELECT c FROM Category c join c.categories WHERE c.id = 7", Products.class);
-            //query.setParameter("category", category);
-        }
+        Query query;
+
+            query = entityManager.createQuery("select  p from Products p join p.categories c where  c.id = :idCategory", Products.class);
+            query.setParameter("idCategory", category.getId());
+
         return (List<Products>) query.getResultList();
     }
 }

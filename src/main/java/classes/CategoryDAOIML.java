@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 
+
 @Repository
 public class CategoryDAOIML  implements CategoryDAO {
 
@@ -17,7 +18,7 @@ public class CategoryDAOIML  implements CategoryDAO {
 
     @Override
      public   Category showOne(long id){
-        return  entityManager.getReference(Category.class, id);
+        return  entityManager.find(Category.class, id);
     }
 
     @Override

@@ -118,7 +118,7 @@ users_id</columns>
         <data-type>varchar(45)</data-type>
       </column>
       <column id="34" parent="6" name="image">
-        <data-type>blob</data-type>
+        <data-type>longblob</data-type>
       </column>
       <key id="35" parent="6" name="PRIMARY">
         <columns>idProducts</columns>
@@ -161,34 +161,37 @@ users_id</columns>
       <column id="45" parent="8" name="male">
         <data-type>bit(1)</data-type>
       </column>
-      <key id="46" parent="8" name="PRIMARY">
+      <column id="46" parent="8" name="isadmin">
+        <data-type>tinyint(2)</data-type>
+      </column>
+      <key id="47" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="47" parent="9" name="Products_idProducts">
+      <column id="48" parent="9" name="Products_idProducts">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="48" parent="9" name="users_id">
+      <column id="49" parent="9" name="users_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <index id="49" parent="9" name="fk_users_product_users1_idx">
+      <index id="50" parent="9" name="fk_users_product_users1_idx">
         <columns>users_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="50" parent="9" name="PRIMARY">
+      <key id="51" parent="9" name="PRIMARY">
         <columns>Products_idProducts
 users_id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="51" parent="9" name="fk_users_product_Products1">
+      <foreign-key id="52" parent="9" name="fk_users_product_Products1">
         <columns>Products_idProducts</columns>
         <ref-key>~.products.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="52" parent="9" name="fk_users_product_users1">
+      <foreign-key id="53" parent="9" name="fk_users_product_users1">
         <columns>users_id</columns>
         <ref-key>~.users.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
