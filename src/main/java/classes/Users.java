@@ -36,6 +36,10 @@ public class Users {
     @OneToMany(mappedBy="users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Orders> orders = new ArrayList<>();
 
+
+    @OneToMany(mappedBy = "users")
+    private  List<roles>   userRole = new ArrayList<>();
+
     public long getId() {
         return id;
     }
