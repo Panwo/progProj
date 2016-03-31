@@ -46,7 +46,7 @@ public class Products implements Serializable {
     @JoinTable(
             name = "users_product",
             joinColumns ={@JoinColumn (name = "Products_idProducts", referencedColumnName = "idProducts")},
-            inverseJoinColumns = {@JoinColumn(name = "users_id", referencedColumnName = "id")}
+            inverseJoinColumns = {@JoinColumn(name = "users_login", referencedColumnName = "login")}
     )
       List<Users> usersList = new ArrayList<>();
 

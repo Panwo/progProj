@@ -18,9 +18,6 @@ public class Orders {
     private long idproduct;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="users_id")
+    @JoinColumn(name="login")
     private Users users;
-
-
-
 }

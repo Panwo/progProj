@@ -1,3 +1,4 @@
+
 package classes;
 
 
@@ -14,18 +15,16 @@ public class roles {
 
     @ManyToOne(fetch = FetchType.LAZY)
      @JoinColumn(name = "login")
-     Users users;
+     Users usersrole;
 
     @Column(name = "role")
     private  String role;
 
-
-
     public roles() {
     }
 
-    public roles(Users users, String role) {
-        this.users = users;
+    public roles(Users usersrole, String role) {
+        this.usersrole = usersrole;
         this.role = role;
     }
 
@@ -33,23 +32,24 @@ public class roles {
         return id;
     }
 
-    public Users getUsers() {
-        return users;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Users getUsersrole() {
+        return usersrole;
+    }
+
+    public void setUsersrole(Users usersrole) {
+        this.usersrole = usersrole;
     }
 
     public String getRole() {
         return role;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setUsers(Users users) {
-        this.users = users;
-    }
-
     public void setRole(String role) {
         this.role = role;
     }
 }
+

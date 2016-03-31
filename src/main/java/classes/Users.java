@@ -1,3 +1,4 @@
+
 package classes;
 
 import javax.persistence.*;
@@ -10,9 +11,6 @@ import java.util.List;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private long id;
-
     @Column(name = "login")
     private String login;
 
@@ -37,11 +35,28 @@ public class Users {
     private List<Orders> orders = new ArrayList<>();
 
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "usersrole")
     private  List<roles>   userRole = new ArrayList<>();
 
-    public long getId() {
-        return id;
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setMale(boolean male) {
+        this.male = male;
     }
 
     public String getLogin() {
@@ -64,3 +79,4 @@ public class Users {
         return male;
     }
 }
+
