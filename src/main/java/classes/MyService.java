@@ -16,8 +16,6 @@ public class MyService {
     @Autowired
     private   ProductsDAO productsDAO;
 
-
-
     @Transactional(readOnly =  true)
     public Category find(long id ){
         return categoryDAO.showOne(id);
@@ -28,11 +26,8 @@ public class MyService {
         return categoryDAO.list();
     }
 
-
     @Transactional(readOnly = true)
     public  List<Products> listProducts (Category category){
        return productsDAO.list(category);
     }
-
-
 }

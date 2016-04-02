@@ -4,14 +4,14 @@
 
 <html>
 <head>
-    <link rel ="stylesheet" href = "/res/style/bootstrap.min.css">
+    <link rel ="stylesheet" href = "/WEB-INF/pages/style/bootstrap.min.css">
     <link rel ="stylesheet"  type="text/css"  href = "/style/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
        <script src="js/jquery-1.11.1.min.js">
        </script>
 
-    <link href="<c:url value="/res/style/style.css" />" rel="stylesheet">
-    <link href="<c:url value="/res/style/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/WEB-INF/pages/style/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/WEB-INF/pages/style/bootstrap.min.css" />" rel="stylesheet">
 
     <meta charset ="urf-8">
     <title>Подарки</title>

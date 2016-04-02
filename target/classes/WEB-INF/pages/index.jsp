@@ -6,19 +6,19 @@
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta charset ="urf-8">
      <!----------------классический-------------------------------->
-    <link rel ="stylesheet" href = "/res/style/bootstrap.min.css">
-    <link rel ="stylesheet" href = "/res/style/style.css">
-    <link rel="stylesheet" href="/res/style/styleff.css" />
+    <link rel ="stylesheet" href = "/WEB-INF/pages/style/bootstrap.min.css">
+    <link rel ="stylesheet" href = "/WEB-INF/pages/style/style.css">
+    <link rel="stylesheet" href="/WEB-INF/pages/style/styleff.css" />
         
-    <script src="/res/js/jquery-1.11.1.min.js"> </script>
+    <script src="/WEB-INF/pages/js/jquery-1.11.1.min.js"> </script>
     <script src="/res/http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
-    <script src="/res/js/login.js"></script>
+    <script src="/WEB-INF/pages/js/login.js"></script>
 
     <title>Подарки</title>
 
     <!-------- 2 способ - ------------------------------------>
-    <link href="<c:url value="/res/style/style.css" />" rel="stylesheet">
-    <link href="<c:url value="/res/style/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/WEB-INF/pages/style/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/WEB-INF/pages/style/bootstrap.min.css" />" rel="stylesheet">
 
 
 </head>
@@ -40,9 +40,14 @@
 
 
  <a class="btn btn-primary" href="/%D0%BE%D0%BF%D1%82%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0%D0%BC.html">Контакты</a>
+
+     <a class="btn btn-primary" href="/login">Регистрация</a>
+
   <div id="bar">
-        <div id="container">
-            <!-- Login Starts Here -->
+
+     <!------------------future form
+      <div id="container">
+
             <div id="loginContainer">
                 <a href="#" id="loginButton"><span>Login</span><em></em></a>
                 <div style="clear:both"></div>
@@ -65,6 +70,7 @@
                 </div>
             </div>
             <!-- Login Ends Here -->
+
         </div>
     </div>
        </div>

@@ -3,45 +3,41 @@ package classes;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users_roles")
-public class roles {
+public class Roles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true)
-    private long id;
+    private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-     @JoinColumn(name = "login")
-     Users usersrole;
+    @OneToMany(mappedBy = "roles",cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    Set <Users> userRoles;
 
     @Column(name = "role")
-    private  String role;
+    private String role;
 
-    public roles() {
+    public Roles() {
     }
 
-    public roles(Users usersrole, String role) {
-        this.usersrole = usersrole;
-        this.role = role;
+
+    public Set<Users> getUserRoles() {
+        return userRoles;
     }
 
-    public long getId() {
+    public void setUserRoles(Set<Users> userRoles) {
+        this.userRoles = userRoles;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Users getUsersrole() {
-        return usersrole;
-    }
-
-    public void setUsersrole(Users usersrole) {
-        this.usersrole = usersrole;
     }
 
     public String getRole() {
@@ -52,4 +48,3 @@ public class roles {
         this.role = role;
     }
 }
-

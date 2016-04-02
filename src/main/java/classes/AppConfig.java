@@ -1,9 +1,11 @@
 package classes;
 
+import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -17,13 +19,37 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.util.Properties;
 
 
 @Configuration
 @ComponentScan("classes")
 @EnableTransactionManagement
 @EnableWebMvc
+
+
 public class AppConfig {
+
+
+
+    @Bean
+    public SessionFactory sessionFactory() {
+        LocalSessionFactoryBuilder builder =
+                new LocalSessionFactoryBuilder(dataSource());
+        builder.scanPackages("classes")
+                .addProperties(getHibernateProperties());
+
+        return builder.buildSessionFactory();
+    }
+
+    private Properties getHibernateProperties() {
+        Properties prop = new Properties();
+        prop.put("hibernate.format_sql", "true");
+        prop.put("hibernate.show_sql", "true");
+        prop.put("hibernate.dialect",
+                "org.hibernate.dialect.MySQL5Dialect");
+        return prop;
+    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory
@@ -40,6 +66,7 @@ public class AppConfig {
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
         return new JpaTransactionManager(emf);
     }
+
 
 
     @Bean

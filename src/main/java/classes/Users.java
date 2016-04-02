@@ -35,9 +35,13 @@ public class Users {
     private List<Orders> orders = new ArrayList<>();
 
 
-    @OneToMany(mappedBy = "usersrole")
-    private  List<roles>   userRole = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id")
+    private Roles roles;
 
+    public Roles getRole() {
+        return roles;
+    }
 
     public void setLogin(String login) {
         this.login = login;
